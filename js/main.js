@@ -343,7 +343,7 @@
         var feedbackEl = form.find('.contact-feedback');
         event.preventDefault();
         // Waiting for the response from the server
-        submitBtn.html('Moment...').addClass('wait').prop('disabled', true);
+        submitBtn.html('Bedankt voor uw bericht!').addClass('wait').prop('disabled', true);
         setTimeout(function() {
           // Posts the Form's data to the server using Ajax
           $.ajax({
