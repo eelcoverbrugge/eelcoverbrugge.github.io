@@ -343,7 +343,7 @@
         var feedbackEl = form.find('.contact-feedback');
         event.preventDefault();
         // Waiting for the response from the server
-        submitBtn.html('Wait...').addClass('wait').prop('disabled', true);
+        submitBtn.html('Moment...').addClass('wait').prop('disabled', true);
         setTimeout(function() {
           // Posts the Form's data to the server using Ajax
           $.ajax({
@@ -357,7 +357,7 @@
               if (response == 'success') {
                 // Feedback to the user
                 submitBtn.removeClass('wait').html('Success').addClass('success');
-                feedbackEl.addClass('success').html('Thank you for your message. It has been sent.').fadeIn(200);
+                feedbackEl.addClass('success').html('Bedankt voor uw bericht. Uw bericht is in goede orde ontvangen!').fadeIn(200);
                 setTimeout(function() {
                   submitBtn.html(submitBtnText).removeClass('success').prop('disabled', false);
                   feedbackEl.fadeOut(200).removeClass('success').html('');
@@ -369,7 +369,7 @@
                 // Feedback to the user
                 console.log(response);
                 submitBtn.removeClass('wait').html('Error').addClass('error');
-                feedbackEl.addClass('error').html('Server error! Please check your browser console log for more details.').fadeIn(200);
+                feedbackEl.addClass('error').html('Oeps, er ging iets mis...').fadeIn(200);
                 setTimeout(function() {
                   submitBtn.html(submitBtnText).removeClass('error').prop('disabled', false);
                   feedbackEl.fadeOut(200).removeClass('error').html('');
